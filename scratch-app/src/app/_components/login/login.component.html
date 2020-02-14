@@ -1,1 +1,22 @@
-<p>login works!</p>
+<div class="login-div">
+    <mat-card>
+        <mat-card-header id="login-header">
+            <mat-card-title>Log in</mat-card-title>
+        </mat-card-header>
+
+        <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <mat-card-content id="login-inputs">
+              <mat-form-field appearance="fill">
+                <mat-label>Enter your username</mat-label>
+                <input matInput type="text" formControlName="username" class="form-control">
+              </mat-form-field>
+      
+              <mat-form-field appearance="fill">
+                <mat-label>Enter your password</mat-label>
+                <input matInput type="password" formControlName="password" class="form-control">
+              </mat-form-field>
+              <button mat-stroked-button color="primary" class="btn-block" routerLink="/login">Log in</button>
+            </mat-card-content>
+        </form>
+    </mat-card>
+</div>

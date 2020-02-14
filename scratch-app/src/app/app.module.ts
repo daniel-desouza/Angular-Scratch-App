@@ -1,12 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';    
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatButtonModule, MatCardModule, MatIconModule,
-  MatProgressBarModule, MatProgressSpinnerModule, MatSidenavModule, MatSliderModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule,
+  MatInputModule, MatProgressBarModule, MatProgressSpinnerModule, MatSidenavModule,
+  MatSliderModule, MatToolbarModule } from '@angular/material';
 
 import { HomeComponent } from './_components/home/home.component';
 import { AboutComponent } from './_components/about/about.component';
@@ -27,9 +30,13 @@ import { LoginComponent } from './_components/login/login.component';
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatButtonModule,
     MatCardModule,
+    MatFormFieldModule,
     MatIconModule,
+    MatInputModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
     MatSidenavModule,
@@ -37,6 +44,7 @@ import { LoginComponent } from './_components/login/login.component';
     MatToolbarModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

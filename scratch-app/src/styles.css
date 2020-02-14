@@ -1,6 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
-@import '@angular/material/prebuilt-themes/purple-green.css';
-
+/* @import '@angular/material/prebuilt-themes/purple-green.css'; */
+/* @import '@angular/material/prebuilt-themes/deeppurple-amber.css'; */
+/* @import '@angular/material/prebuilt-themes/pink-bluegrey.css'; */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.login-div {
+  height:300px;
+  width: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#login-header {
+  justify-content: center;
+}
+#login-header mat-card-title {
+  font-weight: 700;
+}
+
+#login-inputs {
+  display:flex;
+  justify-content:center;
+  align-items:center; 
+  flex-direction:column
+}
