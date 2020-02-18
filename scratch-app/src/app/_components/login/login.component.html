@@ -4,7 +4,7 @@
             <mat-card-title>Log in</mat-card-title>
         </mat-card-header>
 
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
             <mat-card-content id="login-inputs">
               <mat-form-field appearance="fill">
                 <mat-label>Enter your username</mat-label>
