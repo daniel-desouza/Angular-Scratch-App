@@ -4,13 +4,14 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { AlertModule } from './_alert';
 import { AppRoutingModule } from './app-routing.module';    
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule,
   MatInputModule, MatProgressBarModule, MatProgressSpinnerModule, MatSidenavModule,
-  MatSliderModule, MatToolbarModule } from '@angular/material';
+  MatSliderModule, MatSnackBarModule, MatTabsModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
 
 import { HomeComponent } from './_components/home/home.component';
 import { AboutComponent } from './_components/about/about.component';
@@ -28,6 +29,7 @@ import { LoginComponent } from './_components/login/login.component';
     LoginComponent
   ],
   imports: [
+    AlertModule,
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
@@ -43,7 +45,10 @@ import { LoginComponent } from './_components/login/login.component';
     MatProgressSpinnerModule,
     MatSidenavModule,
     MatSliderModule,
-    MatToolbarModule
+    MatSnackBarModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent],

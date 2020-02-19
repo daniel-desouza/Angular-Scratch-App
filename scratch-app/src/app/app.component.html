@@ -8,15 +8,16 @@
       <button mat-button (click)="sidenav.toggle()" id="title-button">
         <mat-icon class="nav-icon">arrow_forward_ios</mat-icon>Angular Sandbox
       </button>
-      <button mat-button routerLink="/"><mat-icon class="nav-icon">home</mat-icon>Home</button>
-      <button mat-button routerLink="/about"><mat-icon class="nav-icon">school</mat-icon>About</button>
-      <button mat-button routerLink="/demo"><mat-icon class="nav-icon">category</mat-icon>Demo</button>
-      <ul style="position:absolute; display:block; text-align:right; right:0; top: -7px; bottom: 0; height:100%; padding: 0;">
-        <li style="display:inline-block;"><button mat-button routerLink="/login">Login</button></li>
-        <li style="display:inline-block;"><button mat-button mat-raised-button routerLink="/register">Register</button></li>
-        <li style="display:inline-block;"><button mat-button routerLink="/login"><mat-icon class="nav-icon">exit_to_app</mat-icon>Logout</button></li>
+      <button mat-button routerLink="/" *ngIf="currentUser"><mat-icon class="nav-icon">home</mat-icon>Home</button>
+      <button mat-button routerLink="/about" *ngIf="currentUser"><mat-icon class="nav-icon">school</mat-icon>About</button>
+      <button mat-button routerLink="/demo" *ngIf="currentUser"><mat-icon class="nav-icon">category</mat-icon>Demo</button>
+      <ul style="position:absolute; display:block; text-align:right; right: 7px; top: -7px; bottom: 0; height:100%; padding: 0;">
+        <li style="display:inline-block;"*ngIf="!currentUser"><button mat-button routerLink="/login">Login</button></li>
+        <li style="display:inline-block;"*ngIf="!currentUser"><button mat-button mat-raised-button routerLink="/register">Register</button></li>
+        <li style="display:inline-block;" *ngIf="currentUser"><button mat-button (click)="logout()" routerLink="/login"><mat-icon class="nav-icon">exit_to_app</mat-icon>Logout</button></li>
       </ul>
     </mat-toolbar>
+    <!-- <alert></alert> -->
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

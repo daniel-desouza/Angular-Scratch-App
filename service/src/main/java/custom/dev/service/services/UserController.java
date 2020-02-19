@@ -1,5 +1,6 @@
 package custom.dev.service.services;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,12 +13,16 @@ import custom.dev.service.model.User;
 public class UserController {
 
     @RequestMapping("/login")
-    public boolean login(@RequestBody User user) {
+    public ResponseEntity<Boolean> login(@RequestBody User user) {
 
-        System.out.println("Printing User");
-        System.out.println(user.getUsername());
-        System.out.println(user.getPassword());
-        return
-          user.getUsername().equals("usaer") && user.getPassword().equals("password");
+        System.out.println("Authenticating");
+        System.out.println(user);
+        System.out.println("--------------");
+
+        if (user.getUsername().equals("user") && user.getPassword().equals("password")) {
+            return ResponseEntity.ok(true);
+        } else {
+            return ResponseEntity.ok(false);
+        }
     }
 }
