@@ -67,13 +67,14 @@ public class AuthRestAPIs {
  
     @PostMapping("/register")
     public ResponseEntity<String> registerUser(@Valid @RequestBody RegisterForm signUpRequest) {
+    	System.out.println("in /register");
         if(userRepository.existsByUsername(signUpRequest.getUsername())) {
-            return new ResponseEntity<String>("Fail -> Username is already taken!",
+            return new ResponseEntity<String>("{ \"message\": \"Username is already taken\"}",
                     HttpStatus.BAD_REQUEST);
         }
  
         if(userRepository.existsByEmail(signUpRequest.getEmail())) {
-            return new ResponseEntity<String>("Fail -> Email is already in use!",
+            return new ResponseEntity<String>("{ \"message\": \"Email is already in use\"}",
                     HttpStatus.BAD_REQUEST);
         }
  
@@ -81,33 +82,37 @@ public class AuthRestAPIs {
         User user = new User(signUpRequest.getName(), signUpRequest.getUsername(),
                 signUpRequest.getEmail(), encoder.encode(signUpRequest.getPassword()));
  
-        Set<String> strRoles = signUpRequest.getRole();
+        String rolex = signUpRequest.getRole();
+        
+        Set<String> strRoles = new HashSet<>();
+        strRoles.add(rolex);
+        
         Set<Role> roles = new HashSet<>();
  
         strRoles.forEach(role -> {
           switch(role) {
           case "admin":
             Role adminRole = roleRepository.findByName(RoleName.ROLE_ADMIN)
-                  .orElseThrow(() -> new RuntimeException("Fail! -> Cause: User Role not find."));
+                  .orElseThrow(() -> new RuntimeException("{ \"message\": \"Role provided was not found\"}"));
             roles.add(adminRole);
             
             break;
           case "pm":
                 Role pmRole = roleRepository.findByName(RoleName.ROLE_PM)
-                  .orElseThrow(() -> new RuntimeException("Fail! -> Cause: User Role not find."));
+                  .orElseThrow(() -> new RuntimeException("{ \"message\": \"Role provided was not found\"}"));
                 roles.add(pmRole);
                 
             break;
           default:
               Role userRole = roleRepository.findByName(RoleName.ROLE_USER)
-                  .orElseThrow(() -> new RuntimeException("Fail! -> Cause: User Role not find."));
-              roles.add(userRole);              
+                  .orElseThrow(() -> new RuntimeException("{ \"message\": \"Role provided was not found\"}"));
+              roles.add(userRole);
           }
         });
         
         user.setRoles(roles);
         userRepository.save(user);
- 
-        return ResponseEntity.ok().body("User registered successfully!");
+        
+        return ResponseEntity.ok().body("{ \"message\": \"User registration successful\"}");
     }
 }

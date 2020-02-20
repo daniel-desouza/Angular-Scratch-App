@@ -7,19 +7,20 @@
       <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
   
         <mat-card-content id="login-inputs">
+  
+          <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name">
+          </mat-form-field>
+          
           <mat-form-field appearance="fill">
             <mat-label>Username</mat-label>
             <input matInput formControlName="username">
           </mat-form-field>
-  
-          <mat-form-field appearance="fill">
-            <mat-label>First Name</mat-label>
-            <input matInput formControlName="firstName">
-          </mat-form-field>
 
           <mat-form-field appearance="fill">
-            <mat-label>Last Name</mat-label>
-            <input matInput formControlName="lastName">
+            <mat-label>Role</mat-label>
+            <input matInput formControlName="role">
           </mat-form-field>
 
           <mat-form-field appearance="fill">

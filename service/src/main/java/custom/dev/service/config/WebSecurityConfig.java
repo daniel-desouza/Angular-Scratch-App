@@ -32,22 +32,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return new JwtAuthTokenFilter();
     }
  
-    // @Override
-    // public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
-    //     authenticationManagerBuilder
-    //             .userDetailsService(userDetailsService)
-    //             .passwordEncoder(passwordEncoder());
-    // }
- 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth)
-      throws Exception {
-        auth
-          .inMemoryAuthentication()
-          .withUser("user")
-          .password("password")
-          .roles("USER");
-    }
+     @Override
+     public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
+         authenticationManagerBuilder
+                 .userDetailsService(userDetailsService)
+                 .passwordEncoder(passwordEncoder());
+     }
 
     @Bean
     @Override

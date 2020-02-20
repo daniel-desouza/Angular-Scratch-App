@@ -65,6 +65,6 @@ export class AlertService {
     timeoutClear() {
         setTimeout(()=>{
             this.clear();
-       }, 3000);
+       }, 4000);
     }
 }
