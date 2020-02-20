@@ -30,20 +30,6 @@ export class AuthenticationService {
   }
   
   login(user) {
-    // return this.http.post<Observable<Boolean>>(`http://localhost:8080/login`, user).subscribe(isValid => {
-    //   if (isValid) {
-    //     sessionStorage.setItem('token', btoa('user' + ':' + 'password'));
-    //     localStorage.setItem('currentUser', JSON.stringify(user));
-    //     this.currentUserSubject.next(user);
-    //     this.router.navigate(['']);
-    //     this.alertService.success('Logged-In Successfully'); // Alternative Alert Service
-    //     this.snackBar.open('Logged-In Successfully', 'close', { duration: 3000 });
-    //   } else {
-    //     this.alertService.error('Log-In Failed'); // Alternative Alert Service
-    //     this.snackBar.open('Log-In Failed', 'close', { duration: 3000 });
-    //   }
-    // });
-
     return this.http.post(`http://localhost:8080/api/auth/login`, user).subscribe(isValid => {
       if (isValid) {
         sessionStorage.setItem('token', btoa('user' + ':' + 'password'));
