@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {OverlayContainer, OverlayModule} from '@angular/cdk/overlay';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -11,7 +12,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule,
   MatInputModule, MatProgressBarModule, MatProgressSpinnerModule, MatSidenavModule,
-  MatSliderModule, MatSnackBarModule, MatTabsModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
+  MatSliderModule, MatSlideToggleModule, MatSnackBarModule, MatTabsModule,
+  MatToolbarModule, MatTooltipModule } from '@angular/material';
 
 import { HomeComponent } from './_components/home/home.component';
 import { AboutComponent } from './_components/about/about.component';
@@ -45,10 +47,12 @@ import { LoginComponent } from './_components/login/login.component';
     MatProgressSpinnerModule,
     MatSidenavModule,
     MatSliderModule,
+    MatSlideToggleModule,
     MatSnackBarModule,
     MatTabsModule,
     MatToolbarModule,
-    MatTooltipModule
+    MatTooltipModule,
+    OverlayModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import { User } from './_models/user';
 import { AuthenticationService } from './_services/authentication.service';
 import { Router } from '@angular/router';
+import { OverlayContainer} from '@angular/cdk/overlay';
+import { MatSlideToggleChange } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -11,12 +13,25 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'scratch-app';
   currentUser: User;
+  darkTheme: false;
+  @HostBinding('class') componentCssClass;
 
   constructor(
     private authenticationService: AuthenticationService,
-    private router: Router
+    private router: Router,
+    public overlayContainer: OverlayContainer
   ) {
     this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+  }
+
+  onSetTheme($event: MatSlideToggleChange) {
+    if ($event.checked) {
+      this.overlayContainer.getContainerElement().classList.add('dark-theme');
+      this.componentCssClass = 'dark-theme';
+    } else {
+      this.overlayContainer.getContainerElement().classList.add('light-theme');
+      this.componentCssClass = 'light-theme';
+    }
   }
 
   logout() {
