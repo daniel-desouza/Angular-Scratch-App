@@ -26,22 +26,23 @@ export class AuthenticationService {
   }
   
   public get currentUserValue(): User {
+    console.log('currentUserValue check', this.currentUserSubject.value)
     return this.currentUserSubject.value;
   }
   
   login(user) {
-    return this.http.post(`http://localhost:8080/api/auth/login`, user).subscribe(isValid => {
-      if (isValid) {
-        sessionStorage.setItem('token', btoa('user' + ':' + 'password'));
-        localStorage.setItem('currentUser', JSON.stringify(user));
-        this.currentUserSubject.next(user);
-        this.router.navigate(['']);
-        this.alertService.success('Logged-In Successfully'); // Alternative Alert Service
-        this.snackBar.open('Logged-In Successfully', 'close', { duration: 3000 });
-      } else {
-        this.alertService.error('Log-In Failed'); // Alternative Alert Service
-        this.snackBar.open('Log-In Failed', 'close', { duration: 3000 });
-      }
+    console.log('login')
+    return this.http.post(`http://localhost:8080/api/auth/login`, user).subscribe(data => {
+      sessionStorage.setItem('token', btoa('user' + ':' + 'password'));
+      localStorage.setItem('currentUser', JSON.stringify(user));
+      this.currentUserSubject.next(user);
+      this.router.navigate(['']);
+      this.alertService.success('Logged-In Successfully'); // Alternative Alert Service
+      this.snackBar.open('Logged-In Successfully', 'close', { duration: 4000 });
+    },
+    error => {
+      this.alertService.error('Log-In Failed'); // Alternative Alert Service
+      this.snackBar.open('Log-In Failed', 'close', { duration: 4000 });
     });
   }
 

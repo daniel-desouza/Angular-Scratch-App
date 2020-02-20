@@ -8,11 +8,12 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.access.channel.ChannelProcessingFilter;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import custom.dev.service.filter.CustomFilter;
 import custom.dev.service.security.JwtAuthEntryPoint;
 import custom.dev.service.security.JwtAuthTokenFilter;
 import custom.dev.service.services.UserDetailsServiceImpl;
@@ -52,15 +53,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
-		httpSecurity.addFilterBefore(new CustomFilter(), ChannelProcessingFilter.class);
-		httpSecurity.authorizeRequests()
-			.antMatchers("/")
-			.permitAll()
-			.anyRequest()
-		    .permitAll()
-			//.fullyAuthenticated()
-			.and().httpBasic().and().csrf().disable();
-		
+		httpSecurity.cors().and().csrf().disable().
+        authorizeRequests()
+        .antMatchers("/api/auth/**").permitAll()
+        .anyRequest().authenticated()
+        .and()
+        .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
+        .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+
+		httpSecurity.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 	}
 
 }
