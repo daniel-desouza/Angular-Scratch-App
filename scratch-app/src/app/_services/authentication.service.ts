@@ -36,10 +36,10 @@ export class AuthenticationService {
         localStorage.setItem('currentUser', JSON.stringify(user));
         this.currentUserSubject.next(user);
         this.router.navigate(['']);
-        // this.alertService.success('Logged-In Successfully'); // Alternative Alert Service
+        this.alertService.success('Logged-In Successfully'); // Alternative Alert Service
         this.snackBar.open('Logged-In Successfully', 'close', { duration: 3000 });
       } else {
-        // this.alertService.error('Log-In Failed'); // Alternative Alert Service
+        this.alertService.error('Log-In Failed'); // Alternative Alert Service
         this.snackBar.open('Log-In Failed', 'close', { duration: 3000 });
       }
     });
