@@ -20,6 +20,9 @@ import { AboutComponent } from './_components/about/about.component';
 import { DemoComponent } from './_components/demo/demo.component';
 import { RegisterComponent } from './_components/register/register.component';
 import { LoginComponent } from './_components/login/login.component';
+import { VelocityComponent } from './_components/demo/template-components/velocity/velocity.component';
+import { FreemarkerComponent } from './_components/demo/template-components/freemarker/freemarker.component';
+import { ThymeleafComponent } from './_components/demo/template-components/thymeleaf/thymeleaf.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { LoginComponent } from './_components/login/login.component';
     AboutComponent,
     DemoComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    VelocityComponent,
+    FreemarkerComponent,
+    ThymeleafComponent
   ],
   imports: [
     AlertModule,

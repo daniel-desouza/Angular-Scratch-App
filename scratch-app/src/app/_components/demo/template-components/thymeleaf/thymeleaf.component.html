@@ -1,0 +1,32 @@
+<div>
+    <mat-card>
+      <mat-card-header id="login-header">
+        <mat-card-title>Send Thymeleaf Email</mat-card-title>
+      </mat-card-header>
+  
+      <form [formGroup]="thymeleafForm" (ngSubmit)="onSubmit()">
+  
+        <mat-card-content id="login-inputs">
+  
+          <mat-form-field appearance="fill">
+            <mat-label>To Address</mat-label>
+            <input matInput formControlName="to">
+          </mat-form-field>
+          
+          <mat-form-field appearance="fill">
+            <mat-label>Subject</mat-label>
+            <input matInput formControlName="subject">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Replacement Variable</mat-label>
+            <input matInput formControlName="replacementVariable">
+          </mat-form-field>
+
+          <button mat-stroked-button color="primary" class="btn-block">Preview</button>
+          <button type="submit" mat-stroked-button color="accent" class="btn-block">Send</button>
+        </mat-card-content>
+      </form>
+    </mat-card>
+  </div>
+  
