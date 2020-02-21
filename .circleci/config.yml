@@ -4,6 +4,7 @@ orbs:
 jobs:
   build-and-test:
     executor:
+      working_directory: ~/scratch-app
       name: node/default
     steps:
       - checkout
