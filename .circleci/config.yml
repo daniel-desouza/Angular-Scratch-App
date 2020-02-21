@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/scratch-app
+    working_directory: ./scratch-app
     docker:
       - image: circleci/node:10-browsers
     steps:
