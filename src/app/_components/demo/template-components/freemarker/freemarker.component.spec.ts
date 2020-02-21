@@ -6,20 +6,20 @@ describe('FreemarkerComponent', () => {
   let component: FreemarkerComponent;
   let fixture: ComponentFixture<FreemarkerComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ FreemarkerComponent ]
-    })
-    .compileComponents();
-  }));
+  // beforeEach(async(() => {
+  //   TestBed.configureTestingModule({
+  //     declarations: [ FreemarkerComponent ]
+  //   })
+  //   .compileComponents();
+  // }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(FreemarkerComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  // beforeEach(() => {
+  //   fixture = TestBed.createComponent(FreemarkerComponent);
+  //   component = fixture.componentInstance;
+  //   fixture.detectChanges();
+  // });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  // it('should create', () => {
+  //   expect(component).toBeTruthy();
+  // });
 });
