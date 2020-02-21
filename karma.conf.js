@@ -18,7 +18,13 @@ module.exports = function (config) {
     coverageIstanbulReporter: {
       dir: require('path').join(__dirname, './coverage/scratch-app'),
       reports: ['html', 'lcovonly', 'text-summary'],
-      fixWebpackSourcePaths: true
+      fixWebpackSourcePaths: true,
+      thresholds: {
+        statements: 75,
+        lines: 75,
+        branches: 75,
+        functions: 75
+      }
     },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
