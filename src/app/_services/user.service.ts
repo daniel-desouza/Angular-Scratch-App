@@ -15,4 +15,8 @@ export class UserService {
   register(user: User) {
     return this.http.post(`http://localhost:8080/api/auth/register`, user);
   }
+
+  getUsers() {
+    return this.http.get(`http://localhost:8080/api/auth/users`).subscribe();
+  }
 }

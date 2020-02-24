@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/_services/user.service';
 
 export interface PeriodicElement {
   id: number;
@@ -8,16 +9,16 @@ export interface PeriodicElement {
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {id: 1, name: 'Hydrogen', username: '1.0079', email: 'H'},
-  {id: 2, name: 'Helium', username: '4.0026', email: 'He'},
-  {id: 3, name: 'Lithium', username: '6.941', email: 'Li'},
-  {id: 4, name: 'Beryllium', username: '9.0122', email: 'Be'},
-  {id: 5, name: 'Boron', username: '10.811', email: 'B'},
-  {id: 6, name: 'Carbon', username: '12.0107', email: 'C'},
-  {id: 7, name: 'Nitrogen', username: '14.0067', email: 'N'},
-  {id: 8, name: 'Oxygen', username: '15.9994', email: 'O'},
-  {id: 9, name: 'Fluorine', username: '18.9984', email: 'F'},
-  {id: 10, name: 'Neon', username: '20.1797', email: 'Ne'},
+  {id: 1, name: 'Hydrogen', username: 'test 1', email: 'H'},
+  {id: 2, name: 'Helium', username: 'test 2', email: 'He'},
+  {id: 3, name: 'Lithium', username: 'test 3', email: 'Li'},
+  {id: 4, name: 'Beryllium', username: 'test 4', email: 'Be'},
+  {id: 5, name: 'Boron', username: 'test 5', email: 'B'},
+  {id: 6, name: 'Carbon', username: 'test 6', email: 'C'},
+  {id: 7, name: 'Nitrogen', username: 'test 7', email: 'N'},
+  {id: 8, name: 'Oxygen', username: 'test 8', email: 'O'},
+  {id: 9, name: 'Fluorine', username: 'test 9', email: 'F'},
+  {id: 10, name: 'Neon', username: 'test 10', email: 'Ne'},
 ];
 
 @Component({
@@ -28,9 +29,14 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class HomeComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'username', 'email'];
   dataSource = ELEMENT_DATA;
-  constructor() { }
+
+  constructor(
+    private userService: UserService
+  ) { }
 
   ngOnInit() {
+    this.userService.getUsers();
+    // this.dataSource = this.userService.getUsers();
   }
 
 }
