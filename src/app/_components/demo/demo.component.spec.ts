@@ -74,8 +74,7 @@ describe('DemoComponent', () => {
     fixture.detectChanges();
   });
 
-  // it('should create', () => {
-  //   console.log('in demo component test');
-  //   expect(component).toBeTruthy();
-  // });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 });
