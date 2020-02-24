@@ -27,6 +27,10 @@ export class FreemarkerComponent implements OnInit {
     });
   }
 
+  get form() {
+    return this.freemarkerForm.controls;
+  }
+
   fetchTemplate() {
     console.log('fetching template');
     // this.templateService.fetchTemplate();
@@ -39,6 +43,8 @@ export class FreemarkerComponent implements OnInit {
     if (this.freemarkerForm.invalid) {
       return;
     }
+
+    this.templateService.sendEmail(this.form.to.value, this.form.subject.value, this.form.replacementVariable.value, "freemarker");
 
     this.loading = true;
 

@@ -27,6 +27,10 @@ export class VelocityComponent implements OnInit {
     });
   }
 
+  get form() {
+    return this.velocityForm.controls;
+  }
+
   fetchTemplate() {
     console.log('fetching template');
     // this.templateService.fetchTemplate();
@@ -35,10 +39,14 @@ export class VelocityComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
 
+console.log('testing here')
+
     // stop here if form is invalid
     if (this.velocityForm.invalid) {
       return;
     }
+
+    this.templateService.sendEmail(this.form.to.value, this.form.subject.value, this.form.replacementVariable.value, "velocity");
 
     this.loading = true;
 

@@ -27,6 +27,10 @@ export class ThymeleafComponent implements OnInit {
     });
   }
 
+  get form() {
+    return this.thymeleafForm.controls;
+  }
+
   fetchTemplate() {
     console.log('fetching template');
     // this.templateService.fetchTemplate();
@@ -39,6 +43,8 @@ export class ThymeleafComponent implements OnInit {
     if (this.thymeleafForm.invalid) {
       return;
     }
+
+    this.templateService.sendEmail(this.form.to.value, this.form.subject.value, this.form.replacementVariable.value, "thymeleaf");
 
     this.loading = true;
 

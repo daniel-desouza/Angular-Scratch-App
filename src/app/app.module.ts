@@ -12,8 +12,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule,
   MatInputModule, MatProgressBarModule, MatProgressSpinnerModule, MatSidenavModule,
-  MatSliderModule, MatSlideToggleModule, MatSnackBarModule, MatTabsModule,
-  MatToolbarModule, MatTooltipModule } from '@angular/material';
+  MatSliderModule, MatSlideToggleModule, MatSnackBarModule, MatTableModule, MatTabsModule,
+  MatToolbarModule, MatTooltipModule, MatTab } from '@angular/material';
 
 import { HomeComponent } from './_components/home/home.component';
 import { AboutComponent } from './_components/about/about.component';
@@ -57,6 +57,7 @@ import 'hammerjs';
     MatSliderModule,
     MatSlideToggleModule,
     MatSnackBarModule,
+    MatTableModule,
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
