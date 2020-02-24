@@ -21,6 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { FreemarkerComponent } from './freemarker.component';
 
+import 'hammerjs';
+
 describe('FreemarkerComponent', () => {
   let component: FreemarkerComponent;
   let fixture: ComponentFixture<FreemarkerComponent>;

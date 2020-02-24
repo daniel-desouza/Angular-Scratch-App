@@ -2,6 +2,8 @@ import { TestBed } from '@angular/core/testing';
 
 import { TemplateService } from './template.service';
 
+import 'hammerjs';
+
 describe('TemplateService', () => {
   // beforeEach(() => TestBed.configureTestingModule({}));
 

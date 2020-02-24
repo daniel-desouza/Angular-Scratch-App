@@ -22,6 +22,8 @@ import { OverlayModule } from '@angular/cdk/overlay';
 
 import { RegisterComponent } from './register.component';
 
+import 'hammerjs';
+
 describe('RegisterComponent', () => {
   let component: RegisterComponent;
   let fixture: ComponentFixture<RegisterComponent>;

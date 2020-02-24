@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { User } from '../_models/user';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
+import 'hammerjs';
+
 describe('UserService', () => {
   let service: UserService;
   let http: HttpClient;

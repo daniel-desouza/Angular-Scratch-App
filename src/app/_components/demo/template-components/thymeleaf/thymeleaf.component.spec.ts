@@ -21,6 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { ThymeleafComponent } from './thymeleaf.component';
 
+import 'hammerjs';
+
 describe('ThymeleafComponent', () => {
   let component: ThymeleafComponent;
   let fixture: ComponentFixture<ThymeleafComponent>;

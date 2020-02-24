@@ -21,6 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { VelocityComponent } from './velocity.component';
 
+import 'hammerjs';
+
 describe('VelocityComponent', () => {
   let component: VelocityComponent;
   let fixture: ComponentFixture<VelocityComponent>;

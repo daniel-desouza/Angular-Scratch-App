@@ -2,6 +2,8 @@ import { TestBed } from '@angular/core/testing';
 
 import { AuthenticationService } from './authentication.service';
 
+import 'hammerjs';
+
 describe('AuthenticationService', () => {
   // beforeEach(() => TestBed.configureTestingModule({}));
 

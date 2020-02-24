@@ -21,6 +21,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OverlayModule } from '@angular/cdk/overlay';
 
+import 'hammerjs';
+
 describe('LoginComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({

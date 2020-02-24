@@ -21,6 +21,8 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { AboutComponent } from '../about/about.component';
 import { DemoComponent } from './demo.component';
 
+import 'hammerjs';
+
 describe('DemoComponent', () => {
   let component: DemoComponent;
   let fixture: ComponentFixture<DemoComponent>;
