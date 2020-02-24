@@ -29,7 +29,7 @@ export class FreemarkerComponent implements OnInit {
 
   fetchTemplate() {
     console.log('fetching template');
-    this.templateService.fetchTemplate();
+    // this.templateService.fetchTemplate();
   }
 
   onSubmit() {
