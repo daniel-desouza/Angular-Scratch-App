@@ -24,6 +24,8 @@ import { VelocityComponent } from './_components/demo/template-components/veloci
 import { FreemarkerComponent } from './_components/demo/template-components/freemarker/freemarker.component';
 import { ThymeleafComponent } from './_components/demo/template-components/thymeleaf/thymeleaf.component';
 
+import 'hammerjs';
+
 @NgModule({
   declarations: [
     AppComponent,
