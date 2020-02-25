@@ -25,6 +25,7 @@ import { FreemarkerComponent } from './_components/demo/template-components/free
 import { ThymeleafComponent } from './_components/demo/template-components/thymeleaf/thymeleaf.component';
 
 import 'hammerjs';
+import { UserDetailsComponent } from './_components/user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import 'hammerjs';
     LoginComponent,
     VelocityComponent,
     FreemarkerComponent,
-    ThymeleafComponent
+    ThymeleafComponent,
+    UserDetailsComponent
   ],
   imports: [
     AlertModule,

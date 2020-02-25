@@ -17,6 +17,10 @@ export class UserService {
   }
 
   getUsers() {
-    return this.http.get(`http://localhost:8080/api/auth/users`).subscribe();
+    return this.http.get(`http://localhost:8080/api/auth/users`);
+  }
+
+  getUser(id: number) {
+    return this.http.get(`http://localhost:8080/api/auth/user/${id}`);
   }
 }
