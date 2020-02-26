@@ -8,7 +8,7 @@ import { AlertModule } from '../../_alert';
 import { MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule,
   MatInputModule, MatProgressBarModule, MatProgressSpinnerModule, MatSidenavModule,
   MatSliderModule, MatSlideToggleModule, MatSnackBarModule, MatTabsModule,
-  MatToolbarModule, MatTooltipModule } from '@angular/material';
+  MatToolbarModule, MatTooltipModule, MatTableModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from '../../app-routing.module';    
 import { RegisterComponent } from '../../_components/register/register.component';
@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OverlayModule } from '@angular/cdk/overlay';
 
 import 'hammerjs';
+import { UserDetailsComponent } from '../user-details/user-details.component';
 
 describe('LoginComponent', () => {
   beforeEach(async(() => {
@@ -35,7 +36,8 @@ describe('LoginComponent', () => {
         LoginComponent,
         VelocityComponent,
         FreemarkerComponent,
-        ThymeleafComponent
+        ThymeleafComponent,
+        UserDetailsComponent
       ],
       imports: [
         AlertModule,
@@ -59,7 +61,8 @@ describe('LoginComponent', () => {
         MatTabsModule,
         MatToolbarModule,
         MatTooltipModule,
-        OverlayModule
+        OverlayModule,
+        MatTableModule
       ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     }).compileComponents();

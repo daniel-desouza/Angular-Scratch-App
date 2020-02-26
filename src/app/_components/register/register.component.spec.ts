@@ -8,7 +8,7 @@ import { AlertModule } from '../../_alert';
 import { MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule,
   MatInputModule, MatProgressBarModule, MatProgressSpinnerModule, MatSidenavModule,
   MatSliderModule, MatSlideToggleModule, MatSnackBarModule, MatTabsModule,
-  MatToolbarModule, MatTooltipModule } from '@angular/material';
+  MatToolbarModule, MatTooltipModule, MatTableModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from '../../app-routing.module';    
 import { LoginComponent } from '../../_components/login/login.component';
@@ -23,6 +23,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { RegisterComponent } from './register.component';
 
 import 'hammerjs';
+import { UserDetailsComponent } from '../user-details/user-details.component';
 
 describe('RegisterComponent', () => {
   let component: RegisterComponent;
@@ -39,7 +40,8 @@ describe('RegisterComponent', () => {
         LoginComponent,
         VelocityComponent,
         FreemarkerComponent,
-        ThymeleafComponent
+        ThymeleafComponent,
+        UserDetailsComponent
       ],
       imports: [
         AlertModule,
@@ -63,7 +65,8 @@ describe('RegisterComponent', () => {
         MatTabsModule,
         MatToolbarModule,
         MatTooltipModule,
-        OverlayModule
+        OverlayModule,
+        MatTableModule
       ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     })

@@ -11,7 +11,7 @@ import { User } from 'src/app/_models/user';
 })
 export class UserDetailsComponent implements OnInit {
 
-  user: User;
+  user: User = {id: 0, name: 'daniel', username: 'adsf', password: 'asdf', role: 'asdf', email: 'asdf', token: 'asdf'};
 
   constructor(
     private route: ActivatedRoute,
@@ -25,7 +25,7 @@ export class UserDetailsComponent implements OnInit {
 
   getUser(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.userService.getUser(id).subscribe(user => this.user = user);
+    // this.userService.getUser(id).subscribe(user => this.user = user);
   }
 
 
